@@ -1,0 +1,122 @@
+.markdown {
+  @apply text-lg leading-relaxed;
+  font-family: 'OpenAI Sans', sans-serif;
+  font-weight: 500; /* Medium - 粗一点的正文 */
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  @apply my-6;
+  font-weight: 500; /* Medium */
+}
+
+.markdown h1 {
+  @apply text-4xl mt-12 mb-6 leading-tight;
+  font-weight: 700; /* Bold */
+}
+
+.markdown h2 {
+  @apply text-3xl mt-12 mb-4 leading-snug;
+  font-weight: 700; /* Bold */
+}
+
+.markdown h3 {
+  @apply text-2xl mt-8 mb-4 leading-snug;
+  font-weight: 600; /* Semibold */
+}
+
+.markdown h4 {
+  @apply text-xl mt-6 mb-3 leading-snug;
+  font-weight: 600; /* Semibold */
+}
+
+.markdown h5 {
+  @apply text-lg mt-4 mb-2;
+  font-weight: 600; /* Semibold */
+}
+
+.markdown h6 {
+  @apply text-base mt-4 mb-2;
+  font-weight: 600; /* Semibold */
+}
+
+/* 粗体文字 */
+.markdown strong,
+.markdown b {
+  font-weight: 700; /* Bold */
+}
+
+/* 斜体文字 */
+.markdown em,
+.markdown i {
+  font-weight: 600; /* Semibold Italic */
+  font-style: italic;
+}
+
+/* 列表 */
+.markdown ul,
+.markdown ol {
+  @apply pl-8;
+  font-weight: 500; /* Medium */
+}
+
+.markdown li {
+  @apply mb-2;
+}
+
+/* 引用块 */
+.markdown blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic;
+  font-weight: 500; /* Medium */
+  color: #4a5568;
+}
+
+/* 代码块 */
+.markdown code {
+  @apply bg-gray-100 rounded px-1 py-0.5;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-weight: 500; /* Medium */
+  font-size: 0.9em;
+}
+
+.markdown pre {
+  @apply bg-gray-900 text-gray-100 rounded p-4 overflow-x-auto my-6;
+}
+
+.markdown pre code {
+  @apply bg-transparent p-0;
+  color: inherit;
+}
+
+/* 链接 */
+.markdown a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+  font-weight: 600; /* Semibold - 链接更粗 */
+}
+
+/* 表格 */
+.markdown table {
+  @apply w-full border-collapse my-6;
+}
+
+.markdown th {
+  @apply bg-gray-100 border border-gray-300 px-4 py-2 text-left;
+  font-weight: 700; /* Bold */
+}
+
+.markdown td {
+  @apply border border-gray-300 px-4 py-2;
+  font-weight: 500; /* Medium */
+}
+
+/* 水平分割线 */
+.markdown hr {
+  @apply my-8 border-t-2 border-gray-200;
+}
+
+/* 图片 */
+.markdown img {
+  @apply max-w-full h-auto rounded-lg shadow-md my-6;
+}

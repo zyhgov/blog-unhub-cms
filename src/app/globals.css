@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   OpenAI Sans 字体声明
+   ============================================ */
+
+/* Regular */
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-RegularItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Light */
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Semibold */
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-SemiboldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenAI Sans';
+  src: url('/fonts/OpenAISans-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ============================================
+   全局字体设置（粗体风格）
+   ============================================ */
+
+@layer base {
+  /* 设置全局字体为 OpenAI Sans，默认使用 Medium (500) */
+  body {
+    font-family: 'OpenAI Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+      'Helvetica Neue', sans-serif;
+    font-weight: 500; /* Medium - 更粗的正文 */
+  }
+
+  /* 标题使用 Bold 或 Semibold */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'OpenAI Sans', sans-serif;
+    font-weight: 700; /* Bold */
+  }
+
+  /* 粗体文字使用 Bold */
+  strong, b {
+    font-weight: 700;
+  }
+
+  /* 强调文字使用 Semibold Italic */
+  em, i {
+    font-weight: 600;
+    font-style: italic;
+  }
+}
+
+/* ============================================
+   自定义工具类（可选）
+   ============================================ */
+
+@layer utilities {
+  /* 不同粗细的辅助类 */
+  .text-extra-bold {
+    font-weight: 700;
+  }
+  
+  .text-semi-bold {
+    font-weight: 600;
+  }
+  
+  .text-thick {
+    font-weight: 500;
+  }
+}
