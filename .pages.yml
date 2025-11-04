@@ -1,28 +1,103 @@
+# ============================================
+# 媒体配置
+# ============================================
 media:
   input: public/assets
   output: /assets
-  categories: [ "image" ]
+  categories: [ "image", "document", "video" ]
+
+# ============================================
+# 内容配置
+# ============================================
 content:
   - name: posts
-    label: Posts
+    label: Blog Posts
     type: collection
     path: _posts
+    filename: "{year}-{month}-{day}-{primary}"
     view:
-      fields: [ coverImage, title, date ]
+      fields: [ coverImage, title, date, authorName ]
+      primary: title
+      sort: [ date, title ]
+      default:
+        sort: date
+        order: desc
+      layout: list
     fields:
-      - { name: title, label: Title, type: string, required: true }
-      - { name: excerpt, label: Excerpt, type: string }
-      - { name: coverImage, label: Cover image, type: image }
-      - { name: date, label: Date, type: date, options: { time: true, format: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" } }
-      - name: author
-        label: Author
-        type: object
-        fields:
-          - { name: name, label: Name, type: string }
-          - { name: picture, label: Picture, type: image }
-      - name: ogImage
-        label: Image (social sharing)
-        type: object
-        fields:
-          - { name: url, label: URL, type: image }
-      - { name: body, label: Body, type: rich-text }
+      # 标题
+      - name: title
+        label: Title
+        type: string
+        required: true
+        description: "文章标题"
+      
+      # 摘要
+      - name: excerpt
+        label: Excerpt
+        type: text
+        required: true
+        description: "文章摘要（显示在列表页）"
+      
+      # 封面图片
+      - name: coverImage
+        label: Cover Image
+        type: image
+        default: "/assets/blog/preview/cover.jpg"
+        description: "文章封面图片"
+      
+      # 发布日期
+      - name: date
+        label: Publication Date
+        type: date
+        required: true
+        default: now
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        description: "文章发布日期和时间"
+      
+      # 作者姓名
+      - name: authorName
+        label: Author Name
+        type: string
+        default: "Your Name"
+        required: true
+        description: "作者名称"
+      
+      # 作者头像
+      - name: authorPicture
+        label: Author Picture
+        type: image
+        default: "/assets/blog/authors/default.jpeg"
+        description: "作者头像图片"
+      
+      # 社交分享图片
+      - name: ogImageUrl
+        label: Social Share Image
+        type: image
+        default: "/assets/blog/preview/cover.jpg"
+        description: "社交媒体分享图片（Twitter、Facebook等）"
+      
+      # 标签（可选）
+      - name: tags
+        label: Tags
+        type: string
+        list:
+          min: 0
+          max: 10
+          collapsible: false
+        description: "文章标签（最多10个）"
+      
+      # 正文内容
+      - name: body
+        label: Content
+        type: rich-text
+        required: true
+        description: "文章正文内容（支持 Markdown）"
+
+# ============================================
+# 设置
+# ============================================
+settings:
+  content:
+    merge: false
